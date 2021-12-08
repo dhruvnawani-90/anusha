@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1720" height="1303" viewBox="0 0 1720 1303">
+  <defs>
+    <clipPath id="clipPath">
+      <rect id="Rectangle_253352" data-name="Rectangle 253352" width="1720" height="1303" rx="10" transform="translate(100 2666)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-line">
+      <rect width="1720" height="1303"/>
+    </clipPath>
+  </defs>
+  <g id="line" clipPath="url(#clip-line)">
+    <g id="Group_156895" data-name="Group 156895" transform="translate(-100 -2666)" clipPath="url(#clipPath)">
+      <g id="Group_163772" data-name="Group 163772" opacity="0.18">
+        <rect id="Rectangle_253274" data-name="Rectangle 253274" width="1" height="1302" transform="translate(1819 2666)" fill="#fff"/>
+        <rect id="Rectangle_253280" data-name="Rectangle 253280" width="1" height="1302" transform="translate(1213 2666)" fill="#fff"/>
+        <rect id="Rectangle_253286" data-name="Rectangle 253286" width="1" height="1302" transform="translate(607 2666)" fill="#fff"/>
+        <rect id="Rectangle_253275" data-name="Rectangle 253275" width="1" height="1302" transform="translate(1718 2666)" fill="#fff"/>
+        <rect id="Rectangle_253281" data-name="Rectangle 253281" width="1" height="1302" transform="translate(1112 2666)" fill="#fff"/>
+        <rect id="Rectangle_253287" data-name="Rectangle 253287" width="1" height="1302" transform="translate(506 2666)" fill="#fff"/>
+        <rect id="Rectangle_253276" data-name="Rectangle 253276" width="1" height="1302" transform="translate(1617 2666)" fill="#fff"/>
+        <rect id="Rectangle_253282" data-name="Rectangle 253282" width="1" height="1302" transform="translate(1011 2666)" fill="#fff"/>
+        <rect id="Rectangle_253288" data-name="Rectangle 253288" width="1" height="1302" transform="translate(405 2666)" fill="#fff"/>
+        <rect id="Rectangle_253277" data-name="Rectangle 253277" width="1" height="1302" transform="translate(1516 2666)" fill="#fff"/>
+        <rect id="Rectangle_253283" data-name="Rectangle 253283" width="1" height="1302" transform="translate(910 2666)" fill="#fff"/>
+        <rect id="Rectangle_253289" data-name="Rectangle 253289" width="1" height="1302" transform="translate(304 2666)" fill="#fff"/>
+        <rect id="Rectangle_253278" data-name="Rectangle 253278" width="1" height="1302" transform="translate(1415 2666)" fill="#fff"/>
+        <rect id="Rectangle_253284" data-name="Rectangle 253284" width="1" height="1302" transform="translate(809 2666)" fill="#fff"/>
+        <rect id="Rectangle_253290" data-name="Rectangle 253290" width="1" height="1302" transform="translate(203 2666)" fill="#fff"/>
+        <rect id="Rectangle_253279" data-name="Rectangle 253279" width="1" height="1302" transform="translate(1314 2666)" fill="#fff"/>
+        <rect id="Rectangle_253285" data-name="Rectangle 253285" width="1" height="1302" transform="translate(708 2666)" fill="#fff"/>
+        <rect id="Rectangle_253291" data-name="Rectangle 253291" width="1" height="1274" transform="translate(102 2666)" fill="#fff"/>
+        <rect id="Rectangle_253293" data-name="Rectangle 253293" width="1" height="2271.999" transform="translate(-175 2958.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253294" data-name="Rectangle 253294" width="1" height="2271.999" transform="translate(-175 3564.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253369" data-name="Rectangle 253369" width="1" height="2271.999" transform="translate(-175 3766.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253296" data-name="Rectangle 253296" width="1" height="2271.999" transform="translate(-175 3059.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253297" data-name="Rectangle 253297" width="1" height="2271.999" transform="translate(-175 3665.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253368" data-name="Rectangle 253368" width="1" height="2271.999" transform="translate(-175 3867.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253370" data-name="Rectangle 253370" width="1" height="2271.999" transform="translate(-175 3968.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253299" data-name="Rectangle 253299" width="1" height="2271.999" transform="translate(-175 3160.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253302" data-name="Rectangle 253302" width="1" height="2271.999" transform="translate(-175 3261.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253304" data-name="Rectangle 253304" width="1" height="2271.999" transform="translate(-175 2756.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253305" data-name="Rectangle 253305" width="1" height="2271.999" transform="translate(-175 3362.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253307" data-name="Rectangle 253307" width="1" height="2271.999" transform="translate(-175 2857.5) rotate(-90)" fill="#fff"/>
+        <rect id="Rectangle_253308" data-name="Rectangle 253308" width="1" height="2271.999" transform="translate(-175 3463.5) rotate(-90)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

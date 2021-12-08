@@ -1,0 +1,96 @@
+.mdl-shadow--2dp {
+    box-shadow: none !important;
+}
+.firebaseui-subtitle, .firebaseui-title {
+    font-weight: 200!important;
+    font-size: 32px!important;
+    line-height: 40px!important;
+    margin: 0!important;
+    max-width: 100%!important;
+}
+.firebaseui-card-header {
+    padding: 0!important;
+}
+.firebaseui-card-content, .firebaseui-card-footer {
+    padding: 0!important;
+    
+}
+.mdl-button {
+    font-family: 'Poppins', sans-serif !important;
+}
+.firebaseui-container {
+    max-width: 500px !important;
+    margin: 0!important;
+}
+.firebaseui-change-phone-number-link {
+    display: inline-block !important;
+}
+.mdl-textfield {
+    padding: 20px 0px !important;
+}
+.firebaseui-country-selector {
+    margin: 12px 0px 20px 0 !important;
+    border-bottom: 2px solid rgb(0 0 0) !important;
+}
+.firebaseui-title {
+    padding-bottom: 0px !important;
+}
+.mdl-textfield__input {
+    max-width: 100% !important;
+}
+.firebaseui-recaptcha-wrapper {
+    margin: 0 !important;
+}
+.rc-anchor-light.rc-anchor-normal {
+    border: 1px solid rgb(211 211 211 / 40%);
+}
+.rc-anchor {
+    border-radius: 3px;
+    box-shadow:  none !important;
+    -webkit-box-shadow: none !important;
+}
+.rc-anchor-normal {
+    width: 360px !important;
+}
+.mdl-textfield__input {
+    border: none;
+    border-bottom: 2px solid rgb(0 0 0) !important;
+    line-height: 1.8;
+    font-family: 'Poppins', sans-serif !important;
+}
+button.firebaseui-id-secondary-link.firebaseui-button.mdl-button.mdl-js-button.mdl-button--primary {
+    height: 64px !important;
+    margin-left: 0px !important;
+    min-width: 240px !important;
+    box-shadow: none !important;
+    margin-right: 10px;
+}
+button.firebaseui-id-submit.firebaseui-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
+    display: inline-block !important;
+    height: 64px !important;
+    margin-left: 0px !important;
+    min-width: 240px !important;
+    box-shadow: none !important;
+    background: #FF6200 !important;
+}
+.firebaseui-card-actions {
+    padding: 0 !important;
+    text-align: left !important;
+}
+.firebaseui-tos.firebaseui-phone-tos {
+    display: none !important;
+}
+.firebaseui-card-header {
+    padding: 0 !important;
+    padding-bottom: 15px!important;
+}
+
+.mdl-dialog.firebaseui-dialog.firebaseui-id-dialog{
+    max-height: 200px !important;
+    overflow: hidden !important;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

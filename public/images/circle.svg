@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="515" height="508" viewBox="0 0 515 508">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.846" y1="0.798" x2="0.136" y2="0.147" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6131ff"/>
+      <stop offset="0.112" stop-color="#6d3efb"/>
+      <stop offset="0.555" stop-color="#a677e7"/>
+      <stop offset="1" stop-color="#f8cac9"/>
+    </linearGradient>
+    <clipPath id="clip-round_circle_2">
+      <rect width="515" height="508"/>
+    </clipPath>
+  </defs>
+  <g id="round_circle_2" clipPath="url(#clip-round_circle_2)">
+    <path id="Path_3815" data-name="Path 3815" d="M250.047,0c138.1,0,250.047,111.95,250.047,250.047S388.144,500.093,250.047,500.093,0,388.144,0,250.047,111.95,0,250.047,0Z" transform="translate(593.948 161.401) rotate(120)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

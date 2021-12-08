@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.289" y1="0.27" x2="0.657" y2="0.652" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffec0b"/>
+      <stop offset="1" stop-color="#ffdc67" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.501" y1="0.114" x2="0.483" y2="1.031" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffdc67"/>
+      <stop offset="1" stop-color="#425ce8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.501" y1="0.114" x2="0.569" y2="1.362" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffdc67"/>
+      <stop offset="1" stop-color="#42e85c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.5" y1="-0.042" x2="0.488" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff4848"/>
+      <stop offset="0.934" stop-color="#ffd866"/>
+      <stop offset="1" stop-color="#ffdc67"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="1.28" y1="-0.192" x2="-0.014" y2="0.91" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffa0a0"/>
+      <stop offset="1" stop-color="#ffdc67"/>
+    </linearGradient>
+    <clipPath id="clip-Web_1920_7">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_7" data-name="Web 1920 – 7" clip-path="url(#clip-Web_1920_7)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <g id="Group_163946" data-name="Group 163946" transform="translate(239.676 25.33)">
+      <rect id="Rectangle_251642" data-name="Rectangle 251642" width="555" height="362" transform="translate(263.323 157.67)" fill="url(#linear-gradient)"/>
+      <circle id="Ellipse_11860" data-name="Ellipse 11860" cx="179" cy="179" r="179" transform="translate(783.323 256.526) rotate(45)" fill="url(#linear-gradient-2)"/>
+      <circle id="Ellipse_11861" data-name="Ellipse 11861" cx="63" cy="63" r="63" transform="matrix(-0.643, 0.766, -0.766, -0.643, 649.079, 705.905)" fill="url(#linear-gradient-3)"/>
+      <path id="Polygon_14" data-name="Polygon 14" d="M295.5,0,591,512H0Z" transform="translate(706.323 262.67)" fill="url(#linear-gradient-4)"/>
+    </g>
+    <rect id="Rectangle_253458" data-name="Rectangle 253458" width="1920" height="1084" fill="#ffdc67"/>
+    <g id="Group_164051" data-name="Group 164051">
+      <g id="Group_163947" data-name="Group 163947" transform="translate(-13918 -3951)">
+        <rect id="Rectangle_253413" data-name="Rectangle 253413" width="1532" height="985" transform="translate(14338 3918)" fill="url(#linear-gradient-5)"/>
+        <g id="Group_163946-2" data-name="Group 163946" transform="translate(14139.677 3982.33)">
+          <rect id="Rectangle_251642-2" data-name="Rectangle 251642" width="555" height="362" transform="translate(263.323 157.67)" fill="url(#linear-gradient)"/>
+          <circle id="Ellipse_11860-2" data-name="Ellipse 11860" cx="179" cy="179" r="179" transform="translate(783.323 256.526) rotate(45)" fill="url(#linear-gradient-2)"/>
+          <circle id="Ellipse_11861-2" data-name="Ellipse 11861" cx="63" cy="63" r="63" transform="matrix(-0.643, 0.766, -0.766, -0.643, 649.079, 705.905)" fill="url(#linear-gradient-3)"/>
+          <path id="Polygon_14-2" data-name="Polygon 14" d="M295.5,0,591,512H0Z" transform="translate(706.323 262.67)" fill="url(#linear-gradient-4)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
