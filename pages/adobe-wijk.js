@@ -520,8 +520,8 @@ function AdobeWiki({links}) {
             <Modal show={show} onHide={handleClose} className="video-modal">
                 <Modal.Header closeButton></Modal.Header>
                 <Container >
-                    <motion.div className="video-player" initial={{ opacity: 0}} animate={{opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
-                        <ReactPlayer url={links?.adobe_wiki?.video_9} id="video_9" controls  autoPlay playing={ show }  onContextMenu={ handleContextMenu } playIcon={ <div>Icon</div> } width="100%" height="100%" />
+                    <motion.div className="video-player mt-0" initial={{ opacity: 0}} animate={{opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
+                        <ReactPlayer url={links?.adobe_wiki?.video_9} id="video_9"  className="player" width="1199px" height="681px" controls  autoPlay playing={ show }  onContextMenu={ handleContextMenu } playIcon={ <div>Icon</div> }  />
                     </motion.div>
                 </Container>
             </Modal>
