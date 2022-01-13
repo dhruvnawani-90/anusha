@@ -111,6 +111,12 @@ function AdobeCaptivate({links}) {
     const handleClose4 = () => setShow4(false);
     const handleShow4 = () => setShow4(true);
 
+
+    const [show5, setShow5] = useState(false);
+
+    const handleClose5 = () => setShow5(false);
+    const handleShow5 = () => setShow5(true);
+
     useEffect(() => {
         if (show) {
             setTempSlide(activeSlide);
@@ -147,7 +153,15 @@ function AdobeCaptivate({links}) {
             setTempSlide(false);
         }
     }, [show4]);
-
+    useEffect(() => {
+        if (show5) {
+            setTempSlide(activeSlide);
+            setactiveSlide(false);
+        } else {
+            setactiveSlide(tempSlide);
+            setTempSlide(false);
+        }
+    }, [show5]);
     return (
         <main>
             <div className="main-wrapper white web-version captivate" >
@@ -158,13 +172,17 @@ function AdobeCaptivate({links}) {
                             <Container> 
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:0.4 }} className="vert-text-main mid-black">Introduction</motion.span>
                                 <Row>
-                                    <Col md={6} className="col-xxl-11 col-xxl-10 col-xxl-8 col-xxl-6">
-                                        <div>
-                                            <motion.div initial={{opacity: 0, y:-40}} animate={{ opacity: 1, y:0 }} transition={{ ease: "easeOut", duration: 1 }} className="svg-holder">
-                                                <Image src="/images/captivate-introduction.svg" width="1200" height="681" />
-                                            </motion.div>
-                                        </div>
-                                    </Col>
+                                    <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
+                                            <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
+                                                <motion.div initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:0.4 }}  className="w-100 origin" >
+                                                    <ReactPlayer url={links?.adobe_captive?.video_10} id="video_10" className="player" width="1199px" height="681px" allowFullScreen playing={activeSlide === 4} />
+                                                </motion.div>
+                                                <div className="hammer-icon-container" onClick={handleShow5}>
+                                                    <img src="/images/hammer.svg" className="hammer-icon" />
+                                                    <span className="watch-impletation">Watch implementation</span>
+                                                </div>
+                                            </span>
+                                        </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={11} md={12}>
@@ -187,7 +205,7 @@ function AdobeCaptivate({links}) {
                                         <motion.div style={{marginTop:'16vh'}} initial={{opacity: 0, y:80}} animate={{y:0, opacity: 1 }} transition={{ ease: "easeOut", duration: 1 }} className="mid-black captivate-wrapper">
                                             <span className="f-18"><span className="font-medium ">ROLE</span> &nbsp; | &nbsp; Project Lead</span>
                                             <span className="ml-5 f-18"><span className="font-medium">YEARS</span> &nbsp; | &nbsp; 2019 - Present</span>
-                                            <p className="mt-5 captivate-para">Captivate is a powerful tool that hasn't undergine a design rewamp in a long time. As a result, workflows were lengthy and complex, and the UI was terribly outdated. After scoping all our features(phew!), we conceded to:</p>
+                                            <p className="mt-5 captivate-para">Captivate is a powerful tool that hasn't undergone a design revamp in a long time. As a result, workflows were lengthy and complex, and the UI was terribly outdated. After scoping all our features(phew!), we conceded to:</p>
                                             <span className="mt-5 d-flex">
                                                 <span><span className="font-medium f-20">Modernize core workflows</span><br /><span className="f-12">REDIFINE UX + UI + COMPLETE CODE CHANGE</span></span>
                                                 <span  className="font-medium d-flex mx-5">+</span>
@@ -212,7 +230,7 @@ function AdobeCaptivate({links}) {
                                                 <span className="ml-5 f-18"><span className="font-medium">YEARS</span> &nbsp; | &nbsp; 2019 - Present</span>
                                             </motion.div>
                                             <motion.div initial={{y:0}} animate={{ y: -40 }} transition={{ ease: "easeOut", duration:1, delay:0}}>
-                                                <p className="captivate-para">Captivate is a powerful tool that hasn't undergine a design rewamp in a long time. As a result, workflows were lengthy and complex, and the UI was terribly outdated. After scoping all our features(phew!), we conceded to:</p>
+                                                <p className="captivate-para">Captivate is a powerful tool that hasn't undergone a design revamp in a long time. As a result, workflows were lengthy and complex, and the UI was terribly outdated. After scoping all our features(phew!), we conceded to:</p>
                                                 <span className="mt-5 d-flex">
                                                     <span><span className="font-medium f-20">Modernize core workflows</span><br /><span className="f-12">REDIFINE UX + UI + COMPLETE CODE CHANGE</span></span>
                                                     <span  className="font-medium d-flex mx-5">+</span>
@@ -246,7 +264,6 @@ function AdobeCaptivate({links}) {
                                             <motion.div initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:1}} className="origin" id="vidPlayer">
                                                 <ReactPlayer url={links?.adobe_captive?.video_1} id="video_1" className="player" width="1199px" height="681px" allowFullScreen playing={ activeSlide === 3 }   onContextMenu={ handleContextMenu } playIcon={ <div>Icon</div> } />
                                             </motion.div>
-                                            {/* <motion.img initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:0.4 }}  src="/images/sicily.webp" alt="property-inspector" className="w-100 origin" /> */}
                                         </span>
                                     </Col>
                                 </Row>
@@ -283,7 +300,6 @@ function AdobeCaptivate({links}) {
                                         <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                             <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
                                                 <motion.div initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:0.4 }}  className="w-100 origin" >
-                                                    {/* <Image src="/images/mammals.webp" width="1200" height="681" /> */}
                                                     <ReactPlayer url={links?.adobe_captive?.video_2} id="video_2" className="player" width="1199px" height="681px" allowFullScreen playing={activeSlide === 4} />
                                                 </motion.div>
                                                 <div className="hammer-icon-container" onClick={handleShow2}>
@@ -407,7 +423,7 @@ function AdobeCaptivate({links}) {
                                     <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}}>
                                         <p className="mid-black mb-2 mt-4 f-18">Xd prototype created to<span className="font-medium"> envision how simple components </span> like buttons, checkboxes, etc. and complex widgets like tabs, hotspots, flip cards, etc. can be customised to suit the content.</p>
                                         <p className="mid-black f-14 lh-22 mb-1 source-sans description-text" >
-                                            WORK IN PROGRESS:Our vision for functional multi-state objects like buttons, radio buttons, etc. is to make them <span className="font-medium">ready-to-use, but easy-to-</span><span className={`d-none ${isActive  ? 'd-inline' : ''}`}>
+                                            Our vision for functional multi-state objects like buttons, radio buttons, etc. is to make them <span className="font-medium">ready-to-use, but easy-to-</span><span className={`d-none ${isActive  ? 'd-inline' : ''}`}>
                                             <span className="font-medium">customise.</span> Component states and interactions like hover, click, visited, etc. are already configured into the component; authors can enable or disable these states and alter their appearance properties.
                                             <span className="font-medium"> A rich content-oriented preset experience ensures most variations are available upfront </span>for the author to choose from- for example, radio button presets would have options with only text, text and image, or only image. Further, authors can toggle text, image, icon, etc. on and off depending on their requirement. Since canvas controls don’t apply to components, authors can choose from a curated set of transform options like size (S, M, L), spacing (default, compact, comfortable) and magnification. This approach dictates that <span className="font-medium">all the diverse common controls like input fields, dropdowns, etc. displayed on the slide look consistent.</span> The same theory extends itself to even smarter widgets like tabs, which are essentially a collection of components and content areas; authors can shift their focus between the tab buttons and content area. While edits apply to navigation controls at a macro level, content areas can be completely customised to suit the content. Again, a rich preset experience for each widget variation ensures efficiency while choosing the appropriate layout. 
                                             </span>
@@ -438,10 +454,10 @@ function AdobeCaptivate({links}) {
                                         </div>
                                         <div className="contact-wrapper bg-white border-black opacity-1 position-relative z-9">
 											<div>
-												<motion.h1 initial={{x:'30vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-heading-2 theme-blue mt-2 d-flex  align-items-center"><Link href="/adobe-wijk"><a className="theme-blue ">Next project</a></Link> <motion.img initial={{x:-30, opacity:0}}  animate={{ x:'0', opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.5 }} src="/images/rightArrowBlue.svg" height="30" className="ml-3" /></motion.h1>
+												<motion.h1 initial={{x:'40vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-heading-2 theme-blue mt-2 d-flex  align-items-center"><Link href="/adobe-wijk"><a className="theme-blue ">Next project</a></Link> <motion.img initial={{x:-30, opacity:0}}  animate={{ x:'0', opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.5 }} src="/images/rightArrowBlue.svg" height="30" className="ml-3" /></motion.h1>
 											</div>
 											<motion.div className="d-flex  flex-column ">
-                                                <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap ">Get in touch for a detailed walkthrough of my work. <a href="/contact" target="_blank"><motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" /></a></motion.p>
+                                                <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href="/contact" target="_blank">Get in touch for a detailed walkthrough of my work.<motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" /></a></motion.p>
 												<motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5"><a href="/contact" target="_blank">Contact me</a></motion.p>
 											</motion.div>
                                         </div>
@@ -481,6 +497,14 @@ function AdobeCaptivate({links}) {
                     <Container >
                         <motion.div className="video-player mt-0" initial={{ opacity: 0}} animate={{opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
                             <ReactPlayer url={links?.adobe_captive?.video_9} id="video_9" className="player" width="1199px" height="681px" allowFullScreen playing={show4} />
+                        </motion.div>
+                    </Container>
+                </Modal>
+                <Modal show={show5} onHide={handleClose5}>
+                    <Modal.Header closeButton></Modal.Header>
+                    <Container >
+                        <motion.div className="video-player mt-0" initial={{ opacity: 0}} animate={{opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
+                            <ReactPlayer url={links?.adobe_captive?.video_9} id="video_9" className="player" width="1199px" height="681px" allowFullScreen playing={show5} />
                         </motion.div>
                     </Container>
                 </Modal>
@@ -608,7 +632,7 @@ function AdobeCaptivate({links}) {
                         <Col md={12} className="mt-4">
                             <h1 className="intro-text mt-3">Components and widgets</h1> 
                             <p className="para-normal-text mt-3">Xd prototype created to <span className="f-bold">  like buttons, checkboxes, etc. and complex widgets like tabs, hotspots, flip cards, etc. can be customised to suit the content. </span> WORK IN PROGRESS:Our vision for functional multi-state objects like buttons, radio buttons, etc. is to make them ready-to-use, but easy-to-</p>                   
-                            <p className="para-normal-text source-sans mt-4">WORK IN PROGRESS:Our vision for functional multi-state objects like buttons, radio buttons, etc. is to make them ready-to-use, but easy-to- <span className={`d-none ${isActive  ? 'd-inline' : ''}`}>
+                            <p className="para-normal-text source-sans mt-4">Our vision for functional multi-state objects like buttons, radio buttons, etc. is to make them ready-to-use, but easy-to- <span className={`d-none ${isActive  ? 'd-inline' : ''}`}>
                             -customise. Component states and interactions like hover, click, visited, etc. are already configured into the component; authors can enable or disable these states and alter their appearance properties. A rich content-oriented preset experience ensures most variations are available upfront for the author to choose from- for example, radio button presets would have options with only text, text and image, or only image. Further, authors can toggle text, image, icon, etc. on and off depending on their requirement. Since canvas controls don’t apply to components, authors can choose from a curated set of transform options like size (S, M, L), spacing (default, compact, comfortable) and magnification. This approach dictates that all the diverse common controls like input fields, dropdowns, etc. displayed on the slide look consistent. The same theory extends itself to even smarter widgets like tabs, which are essentially a collection of components and content areas; authors can shift their focus between the tab buttons and content area. While edits apply to navigation controls at a macro level, content areas can be completely customised to suit the content. Again, a rich preset experience for each widget variation ensures efficiency while choosing the appropriate layout. 
                                 </span>
                             </p>

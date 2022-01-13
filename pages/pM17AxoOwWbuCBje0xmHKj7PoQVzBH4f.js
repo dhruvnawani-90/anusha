@@ -17,11 +17,12 @@ function AdminVideoLinkUpdater({links}) {
     const [pages_and_videos] = useState({
         
         adobe_captive: [
-            {id: "video_1", text: "AdobeCaptivate States Section"},  {id: "video_6", text: "AdobeCaptivate States Section Modal"},
+            {id: "video_10", text: "AdobeCaptivate Introduction Section"}, {id: "video_11", text: "AdobeCaptivate Introduction Section Popup"}, 
+            {id: "video_1", text: "AdobeCaptivate States Section"}, {id: "video_6", text: "AdobeCaptivate States Section Modal"},
             {id: "video_2", text: "Interactions, Conditions and Variables Section"}, {id: "video_7", text: "Interactions, Conditions and Variables Section Popup modal"},
             {id: "video_3", text: "Animations Section"}, {id: "video_8", text: "Animations Section Popup"}, 
             {id: "video_4", text: "State animations Section"}, {id: "video_9", text: "State animations Section Popup"},
-            {id: "video_5", text: "Components and widgets Section"},
+            {id: "video_5", text: "Components and widgets Section"}
             
         ],
         adobe_wiki: [

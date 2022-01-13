@@ -75,7 +75,7 @@ export default function Captivate() {
         setIsSubmitting(false);
     }
     return (
-        <main  className="theme-blue-bg auth-main-wrapper">
+        <main className="theme-blue-bg auth-main-wrapper">
             <motion.div className="main-wrapper auth" initial={{opacity: 1, y:'30vh'}} animate={{ opacity: 1, y:0 }} transition={{ ease: "easeOut", duration: 0.8 }}>
                 <Container> 
                     <Row>
@@ -92,12 +92,12 @@ export default function Captivate() {
                                 </div>
                                 : 
                                 <div className="auth-wrapper">
-                                    <h2 className="mb-2">Contact <span>Us</span></h2>
+                                    <h2 className="mb-2">Contact <span>us</span></h2>
                                     <Form className="auth-form contact" onSubmit={handleSubmit(onSubmit)}>
                                         <Form.Row>
                                             <Col md={6}>
                                                 <Form.Group className="mb-4" controlId="name">
-                                                    <Form.Control {...register("name")} type="text" placeholder="Name" autoFocus/>
+                                                    <Form.Control {...register("name")} type="text" placeholder="Your Name" autoFocus/>
                                                     <span className="formErrorMessage">{errors.name?.message}</span>
                                                 </Form.Group>
                                             </Col>
