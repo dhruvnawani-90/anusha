@@ -173,16 +173,16 @@ function AdobeCaptivate({links}) {
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:0.4 }} className="vert-text-main mid-black">Introduction</motion.span>
                                 <Row>
                                     <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
-                                            <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
-                                                <motion.div initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:0.4 }}  className="w-100 origin" >
-                                                    <ReactPlayer url={links?.adobe_captive?.video_10} id="video_10" className="player" width="1199px" height="681px" allowFullScreen playing={activeSlide === 4} />
-                                                </motion.div>
-                                                <div className="hammer-icon-container" onClick={handleShow5}>
-                                                    <img src="/images/hammer.svg" className="hammer-icon" />
-                                                    <span className="watch-impletation">Watch implementation</span>
-                                                </div>
-                                            </span>
-                                        </Col>
+                                        <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
+                                            <motion.div initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:0.4 }}  className="w-100 origin" >
+                                                <ReactPlayer url={links?.adobe_captive?.video_10} id="video_10" className="player" width="1199px" height="681px" allowFullScreen playing={activeSlide === 4} />
+                                            </motion.div>
+                                            <div className="hammer-icon-container" onClick={handleShow5}>
+                                                <img src="/images/hammer.svg" className="hammer-icon" />
+                                                <span className="watch-impletation">Watch implementation</span>
+                                            </div>
+                                        </span>
+                                    </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={11} md={12}>
@@ -264,13 +264,14 @@ function AdobeCaptivate({links}) {
                                             <motion.div initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:1}} className="origin" id="vidPlayer">
                                                 <ReactPlayer url={links?.adobe_captive?.video_1} id="video_1" className="player" width="1199px" height="681px" allowFullScreen playing={ activeSlide === 3 }   onContextMenu={ handleContextMenu } playIcon={ <div>Icon</div> } />
                                             </motion.div>
+                                            <div className="hammer-icon-container" onClick={() => handleShow('slide_4_modal')}>
+                                                <img src="/images/hammer.svg" className="hammer-icon" />
+                                                <span className="watch-impletation">Watch implementation</span>
+                                            </div>
                                         </span>
                                     </Col>
                                 </Row>
-                                <div className="hammer-icon-container" onClick={() => handleShow('slide_4_modal')}>
-                                    <img src="/images/hammer.svg" className="hammer-icon" />
-                                    <span className="watch-impletation">Watch implementation</span>
-                                </div>
+                                
                                 <Row>
                                     <Col lg={10} md={12}>
                                         <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}}>

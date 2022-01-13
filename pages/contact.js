@@ -16,7 +16,7 @@ import Link from 'next/link'
 const schema = yup.object().shape({
     name: yup.string().required().label("Your name"),
     emailAddress: yup.string().email().required().label("Email address"),
-    howCanIHelp: yup.string().required().label("How can I help")
+    howCanIHelp: yup.string().required().label("How I can help")
 });
 
 export default function Captivate() {
@@ -92,7 +92,7 @@ export default function Captivate() {
                                 </div>
                                 : 
                                 <div className="auth-wrapper">
-                                    <h2 className="mb-2">Contact <span>us</span></h2>
+                                    <h2 className="mb-2">Contact <span>me</span></h2>
                                     <Form className="auth-form contact" onSubmit={handleSubmit(onSubmit)}>
                                         <Form.Row>
                                             <Col md={6}>
@@ -103,7 +103,7 @@ export default function Captivate() {
                                             </Col>
                                             <Col md={6}>
                                                 <Form.Group className="mb-4" controlId="emailAddress">
-                                                    <Form.Control {...register("emailAddress")} type="text" placeholder="Email address"/>
+                                                    <Form.Control {...register("emailAddress")} type="text" placeholder="Your email address"/>
                                                     <span className="formErrorMessage">{errors.emailAddress?.message}</span>
                                                 </Form.Group>
                                             </Col>

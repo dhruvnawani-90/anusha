@@ -14,7 +14,7 @@ import { requireAuth } from '../utils/auth'
 
 const schema = yup.object().shape({
     emailAddress: yup.string().email().required().label("Email address"),
-    howCanIHelp: yup.string().required().label("How can I help")
+    howCanIHelp: yup.string().required().label("How I can help")
 });
 
 function RequestMagicCode() {
@@ -74,7 +74,7 @@ function RequestMagicCode() {
                                     <h2 className="mb-4">I'd love to <span>hear</span> from you!</h2>
                                     <Form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
                                         <Form.Group className="mb-4" controlId="emailAddress">
-                                            <Form.Control {...register("emailAddress")} type="text" placeholder="Email address" autoFocus/>
+                                            <Form.Control {...register("emailAddress")} type="text" placeholder="Your email address" autoFocus/>
                                             <span className="formErrorMessage">{errors.emailAddress?.message}</span>
                                         </Form.Group>
                                         <Form.Group className="mb-4" controlId="emailAddress">
