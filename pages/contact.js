@@ -74,6 +74,7 @@ export default function Captivate() {
         }
         setIsSubmitting(false);
     }
+
     return (
         <main className="theme-blue-bg auth-main-wrapper">
             <motion.div className="main-wrapper auth" initial={{opacity: 1, y:'30vh'}} animate={{ opacity: 1, y:0 }} transition={{ ease: "easeOut", duration: 0.8 }}>
@@ -107,6 +108,7 @@ export default function Captivate() {
                                                     <span className="formErrorMessage">{errors.emailAddress?.message}</span>
                                                 </Form.Group>
                                             </Col>
+                                            
                                         </Form.Row>
                                         <Form.Group className="mb-4" controlId="emailAddress">
                                             <Form.Control as="textarea" {...register("howCanIHelp")} placeholder="Tell me a little bit about how I can help you..." rows={3} />
