@@ -88,6 +88,7 @@ function RequestMagicCode() {
                                             </Button>
                                         </Form.Group>
                                     </Form>
+                                    <Link href="/"><a className="position-absolute close-btn"><img src="/images/close.svg" /></a></Link>
                                 </div>
                             }
                         </Col>
