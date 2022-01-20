@@ -97,7 +97,7 @@ export default function Captivate() {
                                         <Form.Row>
                                             <Col md={6}>
                                                 <Form.Group className="mb-4" controlId="name">
-                                                    <Form.Control {...register("name")} type="text" placeholder="Your Name" autoFocus/>
+                                                    <Form.Control {...register("name")} type="text" placeholder="Your name" autoFocus/>
                                                     <span className="formErrorMessage">{errors.name?.message}</span>
                                                 </Form.Group>
                                             </Col>

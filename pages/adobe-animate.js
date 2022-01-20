@@ -293,7 +293,7 @@ function AdobeAnimate({links}) {
                                                 </div>
                                                 <motion.div className="d-flex  flex-column ">
                                                     <motion.p  initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text theme-blue">Get in touch for a detailed walkthrough of my work.</motion.p>
-                                                    <motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text theme-blue text-right pr-4-5"><a href="/contact" target="_blank">Contact me</a></motion.p>
+                                                    <motion.p initial={{x:'10vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text theme-blue text-right pr-4-5"><a href="/contact" target="_blank">Contact me</a></motion.p>
                                                 </motion.div>
                                             </div>
                                             <div className="contact-wrapper bg-darken opacity-1 position-relative z-9">
@@ -301,9 +301,12 @@ function AdobeAnimate({links}) {
                                                     <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="pv-proj theme-blue mb-4"><motion.img initial={{opacity:'0', x:40}} animate={{ opacity:'1', x:0}} transition={{ ease: "easeOut", duration: 1,  delay:1.8 }} src="/images/leftArrowXs.svg" height="26" /> <Link href="/adobe-wijk"><a className="theme-blue d-flex align-items-center">Previous project</a></Link></motion.p>
                                                     <motion.h1 initial={{x:'15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-heading-2 mt-2 d-flex align-items-center"><Link href="/adobe-customer-stories"><a className="theme-blue d-flex align-items-center"> Next project <motion.img initial={{opacity:'0'}} animate={{ opacity:'1'}} transition={{ ease: "easeOut", duration: 1,  delay:1.8 }} src="/images/logo/right-arrow.png" className="ml-3" /></a></Link></motion.h1>
                                                 </div>
-                                                <motion.div className="d-flex  flex-column">
-                                                    <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-light-orange  d-flex align-items-center no-wrap">Get in touch for a detailed walkthrough of my work. <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top.png" /></motion.p>
-                                                    <motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-light-orange text-right pr-4-5"><a href="/contact" target="_blank">Contact me</a></motion.p>
+                                                <motion.div className="d-flex  flex-column hoverText">
+                                                    <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-light-orange  d-flex align-items-center no-wrap"><a href="/contact" target="_blank">Get in touch for a detailed walkthrough of my work. 
+                                                    <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top.png" className="img-white inherit-display" />
+                                                    <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" />
+                                                    </a></motion.p>
+                                                    <motion.p initial={{x:'10vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-light-orange text-right purple pr-4-5"><a href="/contact" target="_blank">Contact me</a></motion.p>
                                                 </motion.div>
                                             </div>
                                         </motion.div>

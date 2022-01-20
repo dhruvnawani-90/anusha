@@ -449,7 +449,7 @@ function AdobeCaptivate({links}) {
 												<motion.h1 initial={{x:'40vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }}  className=" text-dark contact-heading-2 mt-2 d-flex align-items-center"> Next project <motion.img initial={{x:-30, opacity:0}}  animate={{ x:'0', opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.5 }} src="/images/rightArrowBlue.svg" height="30" className="ml-3" /></motion.h1>
 											</div>
 											<motion.div className="d-flex  flex-column">
-                                                <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text theme-blue  d-flex align-items-center no-wrap ">Get in touch for a detailed walkthrough of my work. <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" /></motion.p>
+                                                <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text theme-blue  d-flex align-items-center no-wrap ">Get in touch for a detailed walkthrough of my work. <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" className="inherit-display" /></motion.p>
 												<motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5">Contact me</motion.p>
 											</motion.div>
                                         </div>
@@ -457,9 +457,11 @@ function AdobeCaptivate({links}) {
 											<div>
 												<motion.h1 initial={{x:'40vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-heading-2 theme-blue mt-2 d-flex  align-items-center"><Link href="/adobe-wijk"><a className="theme-blue ">Next project</a></Link> <motion.img initial={{x:-30, opacity:0}}  animate={{ x:'0', opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.5 }} src="/images/rightArrowBlue.svg" height="30" className="ml-3" /></motion.h1>
 											</div>
-											<motion.div className="d-flex  flex-column ">
-                                                <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href="/contact" target="_blank">Get in touch for a detailed walkthrough of my work.<motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" /></a></motion.p>
-												<motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5"><a href="/contact" target="_blank">Contact me</a></motion.p>
+											<motion.div className="d-flex  flex-column hoverText">
+                                                <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href="/contact" target="_blank">Get in touch for a detailed walkthrough of my work.
+                                                <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" className="inherit-display img-white" />
+                                                <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" /></a></motion.p>
+												<motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5 purple"><a href="/contact" target="_blank">Contact me</a></motion.p>
 											</motion.div>
                                         </div>
                                     </motion.div>
