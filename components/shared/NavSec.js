@@ -26,13 +26,13 @@ function NavSec(props) {
                   </g>
                 </svg>
                 </a>
-                <Link href="/adobe-captivate"><a className={`nav-link ${router.pathname == "/adobe-captivate"  ? 'active' : ''}`} >ADOBE CAPTIVATE</a></Link>
-                <Link href="/adobe-wijk"><a  className={`nav-link ${router.pathname == "/adobe-wijk"  ? 'active' : ''}`}>ADOBE WIJK</a></Link>
-                <Link href="/adobe-animate"><a  className={`nav-link ${router.pathname == "/adobe-animate"  ? 'active' : ''}`}>ADOBE ANIMATE</a></Link>
-                <Link href="/adobe-customer-stories"><a  className={`nav-link ${router.pathname == "/adobe-customer-stories"  ? 'active' : ''}`}>ADOBE CUSTOMER SUCCESS</a></Link>
-                <Link href="/other-projects"><a  className={`nav-link ${router.pathname == "/other-projects"  ? 'active' : ''}`}>OTHER PROJECTS</a></Link>
-                <Link href="/contact">
-                  <a className="nav-link">
+                <a href="/adobe-captivate" className={`nav-link ${router.pathname == "/adobe-captivate"  ? 'active' : ''}`} >ADOBE CAPTIVATE</a>
+                <a href="/adobe-wijk"  className={`nav-link ${router.pathname == "/adobe-wijk"  ? 'active' : ''}`}>ADOBE WIJK</a>
+                <a href="/adobe-animate"  className={`nav-link ${router.pathname == "/adobe-animate"  ? 'active' : ''}`}>ADOBE ANIMATE</a>
+                <a href="/adobe-customer-stories"  className={`nav-link ${router.pathname == "/adobe-customer-stories"  ? 'active' : ''}`}>ADOBE CUSTOMER SUCCESS</a>
+                <a href="/other-projects"  className={`nav-link ${router.pathname == "/other-projects"  ? 'active' : ''}`}>OTHER PROJECTS</a>
+                
+                  <a href="/contact" className="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="78" height="70" viewBox="0 0 78 70">
                       <defs>
                         <clipPath id="clip-contact">
@@ -44,7 +44,7 @@ function NavSec(props) {
                       </g>
                     </svg>
                   </a>
-                  </Link>
+                  
               </Nav>
             </Navbar.Collapse>
             </div>
