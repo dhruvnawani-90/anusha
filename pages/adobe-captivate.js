@@ -175,7 +175,7 @@ function AdobeCaptivate({links}) {
                                     <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                         <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
                                             <motion.div initial={{opacity: 0, scale:0.8}} animate={{ opacity: 1, scale:1 }} transition={{ ease: "easeOut", duration: 0.6,  delay:0.4 }}  className="w-100 origin" >
-                                                <ReactPlayer url={links?.adobe_captive?.video_10} id="video_10" className="player" width="1199px" height="681px" allowFullScreen playing={activeSlide === 4} />
+                                                <ReactPlayer url={links?.adobe_captive?.video_10} id="video_10" className="player" width="1199px" height="681px" allowFullScreen playing={activeSlide === 0} />
                                             </motion.div>
                                             <div className="hammer-icon-container" onClick={handleShow5}>
                                                 <img src="/images/hammer.svg" className="hammer-icon" />
