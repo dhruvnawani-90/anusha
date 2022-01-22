@@ -170,7 +170,7 @@ function AdobeCaptivate({links}) {
                         <motion.div key={activeSlide}>
                         <NavSecDark />
                             <Container> 
-                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:0.4 }} className="vert-text-main mid-black">Introduction</motion.span>
+                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration:0.6,  delay:0.4 }} className="vert-text-main mid-black">Introduction</motion.span>
                                 <Row>
                                     <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                         <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
@@ -186,7 +186,7 @@ function AdobeCaptivate({links}) {
                                 </Row>
                                 <Row>
                                     <Col lg={11} md={12}>
-                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:0.8}}>
+                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:0.8}}>
                                             <p className="mt-4 mid-black font-medium">Adobe Captivate is an e-learning content authoring tool used by instructional designers to create compliance course material, software simulations and immersive VR experiences.</p>
                                             <p className="mid-black sub-text-light">The video above was created for and presented at the Adobe e-learning Summit at Las Vegas in 2019, where the Captivate team shared their vision for the new, modern version of Captivate Next, to be launched in 2021</p>
                                         </motion.div>
@@ -202,7 +202,7 @@ function AdobeCaptivate({links}) {
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1}} transition={{ ease: "easeOut", duration: 0.5,  delay:0.3 }} style={{top:'33vh'}} className="vert-text-main mid-black mid-black">The Captivate story</motion.span>
                                 <Row>
                                     <Col lg={12}>
-                                        <motion.div style={{marginTop:'16vh'}} initial={{opacity: 0, y:80}} animate={{y:0, opacity: 1 }} transition={{ ease: "easeOut", duration: 1 }} className="mid-black captivate-wrapper">
+                                        <motion.div style={{marginTop:'16vh'}} initial={{opacity: 0, y:80}} animate={{y:0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6 }} className="mid-black captivate-wrapper">
                                             <span className="f-18"><span className="font-medium ">ROLE</span> &nbsp; | &nbsp; Project Lead</span>
                                             <span className="ml-5 f-18"><span className="font-medium">YEARS</span> &nbsp; | &nbsp; 2019 - Present</span>
                                             <p className="mt-5 captivate-para">Captivate is a powerful tool that hasn't undergone a design revamp in a long time. As a result, workflows were lengthy and complex, and the UI was terribly outdated. After scoping all our features(phew!), we conceded to:</p>
@@ -224,12 +224,12 @@ function AdobeCaptivate({links}) {
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 0.5,  delay:0.3 }} className="vert-text-main mid-black" style={{top:'33vh'}}>The Captivate story</motion.span>
                                 <Row>
                                     <Col lg={12}>
-                                        <motion.div  initial={{opacity: 0, y:'60px'}} animate={{opacity:1, y:-60}} transition={{ ease: "easeOut", duration:1, delay:0}} className="mid-black captivate-wrapper pt-5">
-                                            <motion.div className="mb-5" initial={{opacity: 0, y:0}} animate={{opacity:0, y:-60}} transition={{ ease: "easeOut", duration:1, delay:0}}>
+                                        <motion.div  initial={{opacity: 0, y:'60px'}} animate={{opacity:1, y:-60}} transition={{ ease: "easeOut", duration:0.6, delay:0}} className="mid-black captivate-wrapper pt-5">
+                                            <motion.div className="mb-5" initial={{opacity: 0, y:0}} animate={{opacity:0, y:-60}} transition={{ ease: "easeOut", duration:0.6, delay:0}}>
                                                 <span className="f-18"><span className="font-medium ">ROLE</span> &nbsp; | &nbsp; Project Lead</span>
                                                 <span className="ml-5 f-18"><span className="font-medium">YEARS</span> &nbsp; | &nbsp; 2019 - Present</span>
                                             </motion.div>
-                                            <motion.div initial={{y:0}} animate={{ y: -40 }} transition={{ ease: "easeOut", duration:1, delay:0}}>
+                                            <motion.div initial={{y:0}} animate={{ y: -40 }} transition={{ ease: "easeOut", duration:0.6, delay:0}}>
                                                 <p className="captivate-para">Captivate is a powerful tool that hasn't undergone a design revamp in a long time. As a result, workflows were lengthy and complex, and the UI was terribly outdated. After scoping all our features(phew!), we conceded to:</p>
                                                 <span className="mt-5 d-flex">
                                                     <span><span className="font-medium f-20">Modernize core workflows</span><br /><span className="f-12">REDIFINE UX + UI + COMPLETE CODE CHANGE</span></span>
@@ -238,14 +238,14 @@ function AdobeCaptivate({links}) {
                                                 </span>
                                             </motion.div>
                                         </motion.div>
-                                        <motion.div initial={{opacity: 0, y:0}} animate={{opacity: 1, y: -100 }} transition={{ ease: "easeOut", duration:1, delay:0.4}} className="grid-2">
+                                        <motion.div initial={{opacity: 0, y:0}} animate={{opacity: 1, y: -100 }} transition={{ ease: "easeOut", duration:0.6, delay:0.4}} className="grid-2">
                                             <div>
                                                 <motion.img src="/images/mammals1.svg" initial={{opacity: 0, y:'100'}} animate={{opacity: 1, y:0 }} transition={{ ease: "easeOut", duration:0.6, delay:0.4 }} className="w-100 mb-3 position-relative z-9" />
-                                                <motion.span  initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}} className="mid-black d-block"><span className="font-medium f-20">Old interface</span><br /><span className="f-12">Outdated UI + Complex, lengthy workflows + <br/> Steep learning curve + Discoverability, clutter</span></motion.span>
+                                                <motion.span  initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}} className="mid-black d-block"><span className="font-medium f-20">Old interface</span><br /><span className="f-12">Outdated UI + Complex, lengthy workflows + <br/> Steep learning curve + Discoverability, clutter</span></motion.span>
                                             </div>
                                             <div>
                                                 <motion.img src="/images/mammals2.svg" initial={{opacity: 0, x:'-30%'}} animate={{x:0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:0.8 }} className="w-100 mb-3 origin position-relative z-1" />
-                                                <motion.span  initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}} className="mid-black d-block"><span className="font-medium f-20">New interface</span><br /><span className="f-12">Left to right philosophy (tool from left, draw on slide, edit on right) + Non - undockable panels + Contextual propety inspector</span></motion.span>
+                                                <motion.span  initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}} className="mid-black d-block"><span className="font-medium f-20">New interface</span><br /><span className="f-12">Left to right philosophy (tool from left, draw on slide, edit on right) + Non - undockable panels + Contextual propety inspector</span></motion.span>
                                             </div>
                                         </motion.div>
                                     </Col>
@@ -257,7 +257,7 @@ function AdobeCaptivate({links}) {
                         <motion.div key={activeSlide}>
                             <NavSecDark />
                             <Container className="video-container"> 
-                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main mid-black">States</motion.span>
+                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration:0.6,  delay:1 }} className="vert-text-main mid-black">States</motion.span>
                                 <Row>
                                     <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                         <span  className={`w100 ${isActive  ? 'video-width' : ''}`}>
@@ -274,7 +274,7 @@ function AdobeCaptivate({links}) {
                                 
                                 <Row>
                                     <Col lg={10} md={12}>
-                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}}>
+                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
                                             <p className="mid-black mt-3 mb-2 f-18">An XD protype created to <span className="font-medium">gauge if authors are able to grasp the concept of "linking and<br/>  unlinking" child states to and from the default state,</span> and intuitively predict the right behaviour.</p>
                                             <p className="mid-black f-14 lh-22 mb-1 source-sans description-text" >
                                                 Whether we’re working with XD or other software leveraging components and states, intuitively predicting the behavioural relationship &nbsp; 
@@ -296,7 +296,7 @@ function AdobeCaptivate({links}) {
                         <motion.div key={activeSlide}>
                         <NavSecDark />
                             <Container> 
-                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main mid-black">Interactions, Conditions and Variables</motion.span>
+                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration:0.6,  delay:1 }} className="vert-text-main mid-black">Interactions, Conditions and Variables</motion.span>
                                     <Row>
                                         <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                             <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
@@ -312,7 +312,7 @@ function AdobeCaptivate({links}) {
                                     </Row>
                                     <Row>
                                     <Col lg={10} md={12}>
-                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}}>
+                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
                                             <p className="mid-black mt-4 f-18 mb-2">Xd prototype to <span className="font-medium">gather engineering’s buy-in to build two new triggers </span> appearing in an application for the first time- objects clicked and states viewed. </p>
                                             <p className="mid-black f-14 lh-22 mb-1 source-sans description-text" >
                                                 Interactions are the building blocks of most engaging content, and we have carefully curated a set of very specialised triggers (which are also &nbsp; 
@@ -333,7 +333,7 @@ function AdobeCaptivate({links}) {
                         <motion.div key={activeSlide}>
                         <NavSecDark />
                             <Container> 
-                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main mid-black">Animations</motion.span>
+                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration:0.6,  delay:1 }} className="vert-text-main mid-black">Animations</motion.span>
                                     <Row>
                                         <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                             <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
@@ -350,7 +350,7 @@ function AdobeCaptivate({links}) {
                                     </Row>
                                     <Row>
                                     <Col lg={10} md={12}>
-                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}}>
+                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
                                             <p className="mid-black mt-4 mb-2 f-18">Xd prototype created to <span className="font-medium"> deliver high fidelity design specs to engineering </span>  early to ensure all<br/> crucial use cases are addressed effectively so complex content can be authored quickly. </p>
                                             <p className="mid-black f-14 lh-22 mb-1 source-sans description-text" >
                                                 While authoring quality e-learning content, animations are primarily used to display and emphasise objects in accordance with the author’s 
@@ -372,7 +372,7 @@ function AdobeCaptivate({links}) {
                         <motion.div key={activeSlide}>
                         <NavSecDark />
                             <Container> 
-                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main mid-black">State animations</motion.span>
+                                <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration:0.6,  delay:1 }} className="vert-text-main mid-black">State animations</motion.span>
                                     <Row>
                                         <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                             <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
@@ -389,7 +389,7 @@ function AdobeCaptivate({links}) {
                                     </Row>
                                     <Row>
                                     <Col xl={10} lg={11} md={12}>
-                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}}>
+                                        <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
                                             <p className="mid-black mt-4 mb-2 f-18">Xd prototype created to<span className="font-medium"> validate the need for a provision to animate disparate objects </span>   that are present across the different states of a single object.</p>
                                             <p className="mid-black f-14 lh-22 mb-1 source-sans description-text" >
                                             When we’re working with similar content (and hence similar objects) across the states which differ mostly in their CSS properties, Captivate can “auto-animate” or seamlessly transform the object from one state to another. However, if the author has diverse content across <span className={`mid-black  font-medium f-16 source-sans bold text-right pointer ${isActive  ? 'd-none' : ''}`} onClick={addClass}>+ Read more</span>
@@ -408,7 +408,7 @@ function AdobeCaptivate({links}) {
                         <motion.div key={activeSlide}>
                         <NavSecDark />
                         <Container> 
-                            <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main mid-black">Components and widgets</motion.span>
+                            <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration:0.6,  delay:1 }} className="vert-text-main mid-black">Components and widgets</motion.span>
                                 <Row>
                                     <Col md={6} className="col-xxl-12 col-xxl-10 col-xxl-8 col-xxl-6">
                                         <span className={`d-flex w100 ${isActive  ? 'w-50' : ''}`} >
@@ -421,7 +421,7 @@ function AdobeCaptivate({links}) {
                                 </Row>
                                 <Row>
                                 <Col lg={10} md={12}>
-                                    <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1, delay:1}}>
+                                    <motion.div initial={{opacity: 0, y:-30}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:0.6, delay:1}}>
                                         <p className="mid-black mb-2 mt-4 f-18">Xd prototype created to<span className="font-medium"> envision how simple components </span> like buttons, checkboxes, etc. and complex widgets like tabs, hotspots, flip cards, etc. can be customised to suit the content.</p>
                                         <p className="mid-black f-14 lh-22 mb-1 source-sans description-text" >
                                             Our vision for functional multi-state objects like buttons, radio buttons, etc. is to make them <span className="font-medium">ready-to-use, but easy-to-</span><span className={`d-none ${isActive  ? 'd-inline' : ''}`}>
@@ -450,7 +450,7 @@ function AdobeCaptivate({links}) {
 											</div>
 											<motion.div className="d-flex  flex-column">
                                                 <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text theme-blue  d-flex align-items-center no-wrap ">Get in touch for a detailed walkthrough of my work. <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" className="inherit-display" /></motion.p>
-												<motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5">Contact me</motion.p>
+												<motion.p initial={{x:'15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5">Contact me</motion.p>
 											</motion.div>
                                         </div>
                                         <div className="contact-wrapper bg-white border-black opacity-1 position-relative z-9">
@@ -461,7 +461,7 @@ function AdobeCaptivate({links}) {
                                                 <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href="/contact" target="_blank">Get in touch for a detailed walkthrough of my work.
                                                 <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" className="inherit-display img-white" />
                                                 <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" /></a></motion.p>
-												<motion.p initial={{x:'8vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5 purple"><a href="/contact" target="_blank">Contact me</a></motion.p>
+												<motion.p initial={{x:'15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark text-right pr-4-5 purple"><a href="/contact" target="_blank">Contact me</a></motion.p>
 											</motion.div>
                                         </div>
                                     </motion.div>
