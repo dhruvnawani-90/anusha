@@ -19,6 +19,13 @@ const schema = yup.object().shape({
 
 function Authentication({destPath}) {
     const router = useRouter();
+    const getSlideValue = () => {
+        const destination = router.query.destination;
+        var url = new URL(`https://xyz.com/${destination}`);
+        return url.searchParams.get("slide");
+    }
+    const [slide] = useState(getSlideValue());
+
     const [cookie, setCookie, removeCookie] = useCookies([GUEST_MAGIC_CODE]);
     const [submitError, setSubmitError] = useState(false);
     const [magicCodeEmpty, setMagicCodeEmpty] = useState(true);
@@ -83,7 +90,7 @@ function Authentication({destPath}) {
                                         </h6>
                                     </Link>
                                 </div>
-                                <Link href="/"><a className="position-absolute close-btn"><img src="/images/close.svg" /></a></Link>
+                                <Link href={router.query.destination ? router.query.destination : '/'}><a className="position-absolute close-btn"><img src="/images/close.svg" /></a></Link>
                             </div>
                         </Col>
                     </Row>
