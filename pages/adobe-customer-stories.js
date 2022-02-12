@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { motion, AnimatePresence, usePresence  } from "framer-motion"
 import MobileNavDark from "../components/shared/MobileNavDark"
 import { GUEST_MAGIC_CODE } from "../utils/constants"
@@ -15,8 +16,36 @@ import { requireAuth } from '../utils/auth'
 import ReactPlayer from 'react-player';
 
 function AdobeCustomerStories({links}) {
-    const [activeSlide, setactiveSlide] = useState(1);
+    const router = useRouter();
+    const getSlideValue = () => {
+        const path = router.asPath;
+        var url = new URL(`https://xyz.com/${path}`);
+		var slide = url.searchParams.get("slide");
+		return slide ? slide : 0;
+    }
+    const [activeSlide, setactiveSlide] = useState(getSlideValue());
     const sliderefd = useRef();
+    function removeParam(parameter) {
+		var url=document.location.href;
+		var urlparts= url.split('?');
+		if (urlparts.length>=2) {
+			var urlBase=urlparts.shift(); 
+			var queryString=urlparts.join("?"); 
+			
+			var prefix = encodeURIComponent(parameter)+'=';
+			var pars = queryString.split(/[&;]/g);
+			for (var i= pars.length; i-->0;)               
+				if (pars[i].lastIndexOf(prefix, 0)!==-1)   
+					pars.splice(i, 1);
+			url = urlBase+'?'+pars.join('&');
+			window.history.pushState('',document.title,url); 
+		}
+		return url;
+	}
+	useEffect(() => {
+		sliderefd?.current?.slickGoTo(activeSlide);
+		removeParam("slide");
+	}, [activeSlide, removeParam]);
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -64,7 +93,7 @@ function AdobeCustomerStories({links}) {
                 <Slider {...settings} ref={(slider) => (sliderefd.current = slider)} className="acs-slick ad-slick customerStories">
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-customer-stories?slide=${activeSlide}`} />
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main dark">Introduction</motion.span>
                                 <Row className="position-relative">
@@ -82,7 +111,7 @@ function AdobeCustomerStories({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-customer-stories?slide=${activeSlide}`} /></div>
                             <Container> 
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main acs text-white">Hyundai EU</motion.span>
                                 <Row>
@@ -119,7 +148,7 @@ function AdobeCustomerStories({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-customer-stories?slide=${activeSlide}`} /></div>
                             <Container> 
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main acs">Singapore airlines</motion.span>
                                 <Row>
@@ -142,7 +171,7 @@ function AdobeCustomerStories({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-customer-stories?slide=${activeSlide}`} /></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main light-grey">Mangalore Smart City</motion.span>
                                 <Row>
@@ -175,7 +204,7 @@ function AdobeCustomerStories({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                        <div className="nav-light"><NavSec /></div>
+                        <div className="nav-light"><NavSec destination={`destination=/adobe-customer-stories?slide=${activeSlide}`} /></div>
                         <div className="container">
                             <Row>
                                 <Col lg={12}>
@@ -197,11 +226,11 @@ function AdobeCustomerStories({links}) {
                                             </div>
                                             <motion.div className="d-flex flex-column hoverText">
                                             <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-white  d-flex align-items-center no-wrap">
-                                                <a href="/contact" target="_blank">Get in touch for a detailed walkthrough of my work. 
+                                                <a href={`/contact?destination=/adobe-customer-stories?slide=${activeSlide}`} target="_blank">Get in touch for a detailed walkthrough of my work. 
                                                     <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top.png" className="img-white inherit-display" />
                                                     <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" />
                                                     </a></motion.p>
-                                                <motion.p initial={{x:'14vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-white text-right mr-4-5 purple pr-4-5"><a href="/contact" target="_blank">Contact me</a></motion.p>
+                                                <motion.p initial={{x:'14vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-white text-right mr-4-5 purple pr-4-5"><a href={`/contact?destination=/adobe-customer-stories?slide=${activeSlide}`} target="_blank">Contact me</a></motion.p>
                                             </motion.div>
                                         </div>
                                     </motion.div>
@@ -213,7 +242,7 @@ function AdobeCustomerStories({links}) {
                 </Slider>
             </div>
             <div className="main-wrapper acs-nav mobile-version p-0">
-                <MobileNavDark />
+                <MobileNavDark destination={`destination=/adobe-customer-stories?slide=${activeSlide}`} />
                 <div className="acs-bg">
                     <Container className="px-m4">
                         <Row>
@@ -273,7 +302,7 @@ function AdobeCustomerStories({links}) {
                                     <h1><Link href="/other-projects"><a  className="theme-blue">Next project</a></Link></h1>
                                     <p className="mt-3 mb-0  f-medium"><Link href="/adobe-customer-stories"><a  className="text-white">Previous project</a></Link></p>
                                     <p className="mt-80 mb-0 text-white">Get in touch for a detailed walkthrough of my work.</p>
-                                    <h2 className="text-white mb-3 d-flex"><a href="/contact" target="_blank">Contact me <img  src="/images/logo/right-top.png" className="mob-contact-arrow" /></a></h2>
+                                    <h2 className="text-white mb-3 d-flex"><a href={`/contact?destination=/adobe-customer-stories?slide=${activeSlide}`} target="_blank">Contact me <img  src="/images/logo/right-top.png" className="mob-contact-arrow" /></a></h2>
                                 </div>
                             </Col>
                         </Row>

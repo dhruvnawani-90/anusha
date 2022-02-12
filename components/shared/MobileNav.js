@@ -3,7 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import Link from 'next/link'
 
 function MobileNav(props) {
- 
+  const { destination } = props;
   const [isActive, setActive] = useState("false");
 
   const handleToggle = () => {
@@ -29,7 +29,7 @@ function MobileNav(props) {
               <li><a href="/adobe-animate" className="nav-link">ADOBE ANIMATE</a></li>
               <li><a href="/adobe-customer-stories" className="nav-link">ADOBE CUSTOMER SUCCESS</a></li>
               <li><a  href="/other-projects" className="nav-link">ADOBE OTHER PROJECTS</a></li>
-              <li><a href="/contact" className="nav-link"><img src="/images/contact.svg"/></a></li>
+              <li><a href={`/contact?${destination}`} className="nav-link"><img src="/images/contact.svg"/></a></li>
           </ul>
         </div>
       </Navbar>

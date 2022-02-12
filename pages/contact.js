@@ -120,7 +120,9 @@ export default function Captivate() {
                                             </Button>
                                         </Form.Group>
                                     </Form>
-                                    <Link href="/"><a className="position-absolute close-btn"><img src="/images/close.svg" /></a></Link>
+                                    <Link href={
+                                        router.query.destination ? router.query.destination : "/"
+                                    }><a className="position-absolute close-btn"><img src="/images/close.svg" /></a></Link>
                                 </div>
                             }
                         </Col>

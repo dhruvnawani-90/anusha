@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Container from 'react-bootstrap/Container'
 import Image from 'next/image'
 import ReactPlayer from 'react-player';
@@ -17,9 +18,37 @@ import { parseCookies } from "../utils/helpers"
 import { requireAuth } from '../utils/auth'
 
 function AdobeWiki({links}) {
-    const [activeSlide, setactiveSlide] = useState(1);
+    const router = useRouter();
+    const getSlideValue = () => {
+        const path = router.asPath;
+        var url = new URL(`https://xyz.com/${path}`);
+		var slide = url.searchParams.get("slide");
+		return slide ? slide : 0;
+    }
+    const [activeSlide, setactiveSlide] = useState(getSlideValue());
     const [tempSlide, setTempSlide] = useState(false);
     const sliderefd = useRef();
+    function removeParam(parameter) {
+		var url=document.location.href;
+		var urlparts= url.split('?');
+		if (urlparts.length>=2) {
+			var urlBase=urlparts.shift(); 
+			var queryString=urlparts.join("?"); 
+			
+			var prefix = encodeURIComponent(parameter)+'=';
+			var pars = queryString.split(/[&;]/g);
+			for (var i= pars.length; i-->0;)               
+				if (pars[i].lastIndexOf(prefix, 0)!==-1)   
+					pars.splice(i, 1);
+			url = urlBase+'?'+pars.join('&');
+			window.history.pushState('',document.title,url); 
+		}
+		return url;
+	}
+	useEffect(() => {
+		sliderefd?.current?.slickGoTo(activeSlide);
+		removeParam("slide");
+	}, [activeSlide, removeParam]);
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -99,7 +128,7 @@ function AdobeWiki({links}) {
                 <Slider {...settings} ref={(slider) => (sliderefd.current = slider)} className="dark bg-slick ad-slick wijk wijk-slick">
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-wijk?slide=${activeSlide}`}/></div>
                             <div className="container trans-all">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1}} transition={{ ease: "easeOut", duration: 0.5,  delay:0.3 }} className="vert-text-main text-white">Introduction</motion.span>
                                 <Row className="position-relative">
@@ -128,7 +157,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide} className="trans-all">
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-wijk?slide=${activeSlide}`}/></div>
                             <div className="container trans-all">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1}} transition={{ ease: "easeOut", duration: 1,  delay:0.3 }} style={{top:'43%'}} className="vert-text-main text-white">The Wijk story</motion.span>
                                 <Row className="mt-80">
@@ -151,7 +180,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide} className="trans-all">
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-wijk?slide=${activeSlide}`}/></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1}} transition={{ ease: "easeOut", duration: 0.5,  delay:0.3 }} className="vert-text-main text-white">The Wijk story</motion.span>
                                 <Row>
@@ -182,7 +211,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <div className="container">
                             <motion.span initial={{opacity: 0}} animate={{ opacity: 1}} transition={{ ease: "easeOut", duration:1,  delay:0.3 }} className="vert-text-main mid-black">The approaches</motion.span>
                                 <Row>
@@ -229,7 +258,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <Container> 
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main mid-black">InDesign</motion.span>
                                 <Row>
@@ -272,7 +301,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <Container> 
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main mid-black">XD</motion.span>
                                 <Row>
@@ -312,7 +341,7 @@ function AdobeWiki({links}) {
                         <motion.div key={activeSlide}>
                             
                             <img src="/images/wave.svg" className="wave" />
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-wijk?slide=${activeSlide}`}/></div>
                             <div className="container">
                             <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main pink">Reflection</motion.span>
                                 <Row>
@@ -335,7 +364,7 @@ function AdobeWiki({links}) {
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
                             <motion.img initial={{opacity: 1, y:0}} animate={{y:'-46%', opacity: 1 }} transition={{ ease: "easeOut", duration:1.5, delay:0.4}} src="/images/wave.svg" className="wave" />
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-wijk?slide=${activeSlide}`}/></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }}  className="vert-text-main pink">Reflection</motion.span>
                                 <Row>
@@ -361,7 +390,7 @@ function AdobeWiki({links}) {
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
                             <img src="/images/wave.svg" className="wave" />
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/adobe-wijk?slide=${activeSlide}`}/></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main pink">Reflection</motion.span>
                                 <Row>
@@ -379,7 +408,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main dark">Campaign orchestration</motion.span>
                                 <Row>
@@ -403,7 +432,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main dark">Creation of assets</motion.span>
                                 <Row>
@@ -426,7 +455,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main dark">Preview and share</motion.span>
                                 <motion.div initial={{opacity: 0, y:80}} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration:1}} className="row mt-4">
@@ -461,7 +490,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main dark">Collaboration and delivery</motion.span>
                                 <Row>
@@ -484,7 +513,7 @@ function AdobeWiki({links}) {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <NavSecDark />
+                            <NavSecDark destination={`destination=/adobe-wijk?slide=${activeSlide}`} />
                             <Container> 
                                 <Row>
                                     <Col lg={12} className="mt-5">
@@ -505,11 +534,11 @@ function AdobeWiki({links}) {
                                                     <motion.h1 initial={{x:'15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-heading-2 mt-2 d-flex align-items-center"><Link href="/adobe-animate"><a className="theme-blue d-flex align-items-center"> Next project <motion.img initial={{opacity:'0'}} animate={{ opacity:'1'}} transition={{ ease: "easeOut", duration: 1,  delay:1.8 }} src="/images/logo/right-arrow.png" className="ml-3" /></a></Link></motion.h1>
                                                 </div>
                                                 <motion.div className="d-flex justify-content-end flex-column align-items-end hoverText">
-                                                    <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href="/contact" target="_blank">Get in touch for a detailed walkthrough of my work. 
+                                                    <motion.p initial={{x:'-15vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href={`/contact?destination=/adobe-wijk?slide=${activeSlide}`} target="_blank">Get in touch for a detailed walkthrough of my work. 
                                                     <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/logo/right-top-dark.png" className="img-white inherit-display" />
                                                     <motion.img initial={{x:-20, y:-20, opacity:0}} animate={{ x:10, y:-40, opacity:1}} transition={{ ease: "easeOut", duration: 0.6,  delay:1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" />
                                                     </a></motion.p>
-                                                    <motion.p initial={{x:'10vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark purple"><a href="/contact" target="_blank">Contact me</a></motion.p>
+                                                    <motion.p initial={{x:'10vw'}} animate={{ x:'0'}} transition={{ ease: "easeOut", duration: 0.6,  delay:1 }} className="contact-mid-text text-dark purple"><a href={`/contact?destination=/adobe-wijk?slide=${activeSlide}`} target="_blank">Contact me</a></motion.p>
                                                 </motion.div>
                                             </div>
                                         </motion.div>
@@ -538,7 +567,7 @@ function AdobeWiki({links}) {
                 </Container>
             </Modal>
             <div className="main-wrapper home-bg mobile-version p-0">
-                <MobileNav />
+                <MobileNav destination={`destination=/adobe-wijk?slide=${activeSlide}`}/>
                 <div className="position-relative">
                     <Container className="px-4">
                         <Row className="align-items-center">
@@ -747,7 +776,7 @@ function AdobeWiki({links}) {
                                         <h1><Link href="/adobe-animate"><a  className="theme-blue">Next project</a></Link></h1>
                                         <p className="mt-3 mb-0  f-medium"><Link href="/adobe-captivate"><a  className="text-dark">Previous project</a></Link></p>
                                         <p className="mt-80 mb-0 text-dark">Get in touch for a detailed walkthrough of my work.</p>
-                                        <h2 className="text-dark mb-3 d-flex"><a href="/contact" target="_blank">Contact me <img  src="/images/logo/right-top-dark.png" className="mob-contact-arrow" /></a></h2>
+                                        <h2 className="text-dark mb-3 d-flex"><a href={`/contact?destination=/adobe-wijk?slide=${activeSlide}`} target="_blank">Contact me <img  src="/images/logo/right-top-dark.png" className="mob-contact-arrow" /></a></h2>
                                     </div>
                                 </Col>
                             </Row>

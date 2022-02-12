@@ -8,14 +8,43 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import MobileNav from "../components/shared/MobileNav"
 import { GUEST_MAGIC_CODE } from "../utils/constants"
 import { parseCookies } from "../utils/helpers"
 import { requireAuth } from '../utils/auth'
 
 function Captivate() {
-    const [activeSlide, setactiveSlide] = useState(1);
+    const router = useRouter();
+    const getSlideValue = () => {
+        const path = router.asPath;
+        var url = new URL(`https://xyz.com/${path}`);
+		var slide = url.searchParams.get("slide");
+		return slide ? slide : 0;
+    }
+    const [activeSlide, setactiveSlide] = useState(getSlideValue());
     const sliderefd = useRef();
+    function removeParam(parameter) {
+		var url=document.location.href;
+		var urlparts= url.split('?');
+		if (urlparts.length>=2) {
+			var urlBase=urlparts.shift(); 
+			var queryString=urlparts.join("?"); 
+			
+			var prefix = encodeURIComponent(parameter)+'=';
+			var pars = queryString.split(/[&;]/g);
+			for (var i= pars.length; i-->0;)               
+				if (pars[i].lastIndexOf(prefix, 0)!==-1)   
+					pars.splice(i, 1);
+			url = urlBase+'?'+pars.join('&');
+			window.history.pushState('',document.title,url); 
+		}
+		return url;
+	}
+	useEffect(() => {
+		sliderefd?.current?.slickGoTo(activeSlide);
+		removeParam("slide");
+	}, [activeSlide, removeParam]);
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -58,7 +87,7 @@ function Captivate() {
                 <Slider {...settings} ref={(slider) => (sliderefd.current = slider)} className="other-projects">
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/other-projects?slide=${activeSlide}`} /></div>
                             <div className="container mt-4">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main text-white">Furlenco’s Float and Pod</motion.span>
                                 <Row>
@@ -93,7 +122,7 @@ function Captivate() {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/other-projects?slide=${activeSlide}`} /></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main text-white">Primary audiences</motion.span>
                                 <Row>
@@ -131,7 +160,7 @@ function Captivate() {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/other-projects?slide=${activeSlide}`} /></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main text-white">Telling the story</motion.span>
                                 <Row>
@@ -158,7 +187,7 @@ function Captivate() {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/other-projects?slide=${activeSlide}`} /></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main text-white">Bringing it to life</motion.span>
                                 <Row>
@@ -188,7 +217,7 @@ function Captivate() {
                             <motion.div initial={{opacity: 0, rotateZ:'37deg'}} animate={{ opacity: 1, rotateZ:0}} transition={{ ease: "easeOut", duration: 0.6 }} className="position-absolute polygon">
                                 <Image src="/images/polygon.png"   width={1116} height={820} />
                             </motion.div>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/other-projects?slide=${activeSlide}`} /></div>
                             <div className="container">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main lit-blue">iGEM, 2010</motion.span>
                                 <Row>
@@ -220,7 +249,7 @@ function Captivate() {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                        <div className="nav-light"><NavSec /></div>
+                        <div className="nav-light"><NavSec destination={`destination=/other-projects?slide=${activeSlide}`} /></div>
                             <div className="container position-relative">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main lit-blue">The project</motion.span>
                                 <Row>
@@ -253,7 +282,7 @@ function Captivate() {
                     </AnimatePresence>
                     <AnimatePresence exitBeforeEnter={true} >
                         <motion.div key={activeSlide}>
-                            <div className="nav-light"><NavSec /></div>
+                            <div className="nav-light"><NavSec destination={`destination=/other-projects?slide=${activeSlide}`} /></div>
                             <div className="container position-relative">
                                 <motion.span initial={{opacity: 0}} animate={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 1,  delay:1 }} className="vert-text-main lit-blue">Hobbies</motion.span>
                                 <Row>
@@ -282,7 +311,7 @@ function Captivate() {
                 </Slider>
             </div>
             <div className="main-wrapper other-projects-mobile  mobile-version p-0 pb-0" >
-                <MobileNav/>
+                <MobileNav destination={`destination=/other-projects?slide=${activeSlide}`}/>
                 <Container className="px-m4">
                     <Row>
                         <Col md={12} className="mt-4">
