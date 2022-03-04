@@ -20,7 +20,7 @@ const schema = yup.object().shape({
 });
 
 export default function Captivate() {
-    const router = useRouter();
+    const router = useRouter()
     const sliderefd = useRef();
     const settings = {
         dots: true,
@@ -75,10 +75,17 @@ export default function Captivate() {
         setIsSubmitting(false);
     }
 
+    const [close , setClose] = useState(false)
+   
+    const cancelClicked = () => {
+        setClose(true);
+        router.push(router?.query?.destination != undefined ? router.query.destination : "/"); 
+    }
     return (
         <main className="theme-blue-bg auth-main-wrapper">
-            <motion.div className="main-wrapper auth" initial={{opacity: 1, y:'30vh'}} animate={{ opacity: 1, y:0 }} transition={{ ease: "easeOut", duration: 0.8 }}>
-                <Container> 
+            {/* className={`main-wrapper auth ${setClose ? '' : 'remove'}`} */}
+            <motion.div className={`main-wrapper auth ${close? 'remove' : ''}`} initial={{opacity: 1, y:'30vh'}} animate={{ opacity: 1, y:0 }} transition={{ ease: "easeOut", duration: 0.8 }}>
+                <Container>     
                     <Row>
                         <Col lg={12} className="mt-5">
                             {mailSendSuccess ? 
@@ -120,9 +127,7 @@ export default function Captivate() {
                                             </Button>
                                         </Form.Group>
                                     </Form>
-                                    <Link href={
-                                        router.query.destination ? router.query.destination : "/"
-                                    }><a className="position-absolute close-btn"><img src="/images/close.svg" /></a></Link>
+                                    <Link href="#"><a onClick={cancelClicked} className="position-absolute close-btn"><img src="/images/close.svg" /></a></Link>
                                 </div>
                             }
                         </Col>
