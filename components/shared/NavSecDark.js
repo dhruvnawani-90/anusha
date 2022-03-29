@@ -2,10 +2,21 @@ import React from "react";
 import { Navbar, Nav } from 'react-bootstrap';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { getCookie } from "../../utils/helpers";
+import { GUEST_MAGIC_CODE } from "../../utils/constants";
 
 function NavSecDark(props) {
-  const { destination } = props;
-  const router = useRouter()
+  const { destination, setisContactClicked, setclickedRoute } = props;
+  const router = useRouter();
+  const checkAuth = (path) => {
+    let magic_code = getCookie(GUEST_MAGIC_CODE);
+    if (magic_code && typeof magic_code === 'string') {
+      router.push(path);
+    } else {
+      setclickedRoute(path);
+      setisAuthenticated(false);
+    }
+  }
   return (
     <>
       <Navbar expand="lg" className="dark-nav">
@@ -27,13 +38,13 @@ function NavSecDark(props) {
                 </svg>
               </a>
 
-              <a href="/adobe-captivate" className={`nav-link ${router.pathname == "/adobe-captivate" ? 'active' : ''}`} >ADOBE CAPTIVATE</a>
-              <a href="/adobe-wijk" className={`nav-link ${router.pathname == "/adobe-wijk" ? 'active' : ''}`}>ADOBE WIJK</a>
-              <a href="/adobe-animate" className={`nav-link ${router.pathname == "/adobe-animate" ? 'active' : ''}`}>ADOBE ANIMATE</a>
-              <a href="/adobe-customer-stories" className={`nav-link ${router.pathname == "/adobe-customer-stories" ? 'active' : ''}`}>ADOBE CUSTOMER SUCCESS</a>
-              <a href="/other-projects" className={`nav-link ${router.pathname == "/other-projects" ? 'active' : ''}`}>OTHER PROJECTS</a>
-
-              <a href={`/contact?${destination}`} className="nav-link">
+              <a onClick={() => checkAuth('/adobe-captivate')} href="#" className={`nav-link ${router.pathname == "/adobe-captivate" ? 'active' : ''}`} >ADOBE CAPTIVATE</a>
+              <a onClick={() => checkAuth('/adobe-wijk')} href="#" className={`nav-link ${router.pathname == "/adobe-wijk" ? 'active' : ''}`}>ADOBE WIJK</a>
+              <a onClick={() => checkAuth('/adobe-animate')} href="#" className={`nav-link ${router.pathname == "/adobe-animate" ? 'active' : ''}`}>ADOBE ANIMATE</a>
+              <a onClick={() => checkAuth('/adobe-customer-stories')} href="#" className={`nav-link ${router.pathname == "/adobe-customer-stories" ? 'active' : ''}`}>ADOBE CUSTOMER SUCCESS</a>
+              <a onClick={() => checkAuth('/other-projects')} href="#" className={`nav-link ${router.pathname == "/other-projects" ? 'active' : ''}`}>OTHER PROJECTS</a>
+              {/* {`/contact?${destination}`} */}
+              <a onClick={() => setisContactClicked(true)} href="#" className="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="78" height="70" viewBox="0 0 78 70">
                   <defs>
                     <clipPath id="clip-contact">
