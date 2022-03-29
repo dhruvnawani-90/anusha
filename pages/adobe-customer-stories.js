@@ -235,11 +235,11 @@ function AdobeCustomerStories({ links, authenticated }) {
                                                     </div>
                                                     <motion.div className="d-flex flex-column hoverText">
                                                         <motion.p initial={{ x: '-15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-light-text text-white  d-flex align-items-center no-wrap">
-                                                            <a href={`/contact?destination=/adobe-customer-stories?slide=${activeSlide}`} target="_blank">Get in touch for a detailed walkthrough of my work.
+                                                            <a href={`#`} onClick={() => setisContactClicked(true)}>Get in touch for a detailed walkthrough of my work.
                                                                 <motion.img initial={{ x: -20, y: -20, opacity: 0 }} animate={{ x: 10, y: -40, opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6, delay: 1.8 }} src="/images/logo/right-top.png" className="img-white inherit-display" />
                                                                 <motion.img initial={{ x: -20, y: -20, opacity: 0 }} animate={{ x: 10, y: -40, opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6, delay: 1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" />
                                                             </a></motion.p>
-                                                        <motion.p initial={{ x: '14vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text text-white text-right mr-4-5 purple pr-4-5"><a href={`/contact?destination=/adobe-customer-stories?slide=${activeSlide}`} target="_blank">Contact me</a></motion.p>
+                                                        <motion.p initial={{ x: '14vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text text-white text-right mr-4-5 purple pr-4-5"><a href={`#`} onClick={() => setisContactClicked(true)}>Contact me</a></motion.p>
                                                     </motion.div>
                                                 </div>
                                             </motion.div>
@@ -311,7 +311,7 @@ function AdobeCustomerStories({ links, authenticated }) {
                                         <h1><Link href="/other-projects"><a className="theme-blue">Next project</a></Link></h1>
                                         <p className="mt-3 mb-0  f-medium"><Link href="/adobe-customer-stories"><a className="text-white">Previous project</a></Link></p>
                                         <p className="mt-80 mb-0 text-white">Get in touch for a detailed walkthrough of my work.</p>
-                                        <h2 className="text-white mb-3 d-flex"><a href={`/contact?destination=/adobe-customer-stories?slide=${activeSlide}`} target="_blank">Contact me <img src="/images/logo/right-top.png" className="mob-contact-arrow" /></a></h2>
+                                        <h2 className="text-white mb-3 d-flex"><a href={`#`} onClick={() => setisContactClicked(true)}>Contact me <img src="/images/logo/right-top.png" className="mob-contact-arrow" /></a></h2>
                                     </div>
                                 </Col>
                             </Row>

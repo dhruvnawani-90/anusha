@@ -175,7 +175,7 @@ function AdobeAnimate({ links, authenticated }) {
                                     <div className="o-hidden">
                                         <Row>
                                             <Col lg={12}>
-                                                <motion.div initial={{ opacity: 0, y: '150px' }} animate={{ opacity: 1, y: -70 }} transition={{ ease: "easeOut", duration: 1, delay: 0 }} className="animate-wrapper" className="animate-wrapper pt-0">
+                                                <motion.div initial={{ opacity: 0, y: '150px' }} animate={{ opacity: 1, y: -70 }} transition={{ ease: "easeOut", duration: 1, delay: 0 }}  className="animate-wrapper pt-0">
                                                     <motion.p initial={{ opacity: 0, y: '0px' }} animate={{ opacity: 1, y: -100 }} transition={{ ease: "easeOut", duration: 1, delay: 0 }} className="text-light-orange f-16 f-bold">Our objective for the Animate 2019 release was to completely modernise the interface and optimise<br /> workflows primarily for novice users, while retaining familiarity and power for advanced users.</motion.p>
                                                     <div className="button-style-wrapper mt-5">
                                                         <div className="pr-aud position-relative">
@@ -254,7 +254,7 @@ function AdobeAnimate({ links, authenticated }) {
                                     <Row>
                                         <Col md={6} className="col-xxl-11 col-xxl-10 col-xxl-8 col-xxl-6 d-flex">
                                             <div className={`d-flex w100 position-relative ${isActive ? 'w-50' : ''}`}>
-                                                <motion.img className="col-2-5" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ ease: "easeOut", duration: 1, delay: 0.4 }} src="/images/property-inspector.svg" alt="property-inspector" className="col-2-5" />
+                                                <motion.img className="col-2-5" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ ease: "easeOut", duration: 1, delay: 0.4 }} src="/images/property-inspector.svg" alt="property-inspector"  />
                                                 <motion.img className="col-2-5" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ ease: "easeOut", duration: 1, delay: 0.4 }} src="/images/property-inspector.svg" alt="property-inspector" />
                                                 <motion.img className="col-2-5" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ ease: "easeOut", duration: 1, delay: 0.4 }} src="/images/property-inspector.svg" alt="property-inspector" />
                                                 <motion.img className="col-2-5" initial={{ opacity: 0, x: 0 }} animate={{ opacity: 1, x: '10vw' }} transition={{ ease: "easeOut", duration: 1, delay: 0.8, stiffness: 400, damping: 40 }} src="/images/property-inspector.svg" alt="property-inspector" />
@@ -331,7 +331,7 @@ function AdobeAnimate({ links, authenticated }) {
                                                     </div>
                                                     <motion.div className="d-flex  flex-column ">
                                                         <motion.p initial={{ x: '-15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-light-text theme-blue">Get in touch for a detailed walkthrough of my work.</motion.p>
-                                                        <motion.p initial={{ x: '10vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text theme-blue text-right pr-4-5"><a href={`/contact?destination=/adobe-animate?slide=${activeSlide}`} target="_blank">Contact me</a></motion.p>
+                                                        <motion.p initial={{ x: '10vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text theme-blue text-right pr-4-5"><a href="#" onClick={() => setisContactClicked(true)}>Contact me</a></motion.p>
                                                     </motion.div>
                                                 </div>
                                                 <div className="contact-wrapper bg-darken opacity-1 position-relative z-9">
@@ -340,11 +340,11 @@ function AdobeAnimate({ links, authenticated }) {
                                                         <motion.h1 initial={{ x: '15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-heading-2 mt-2 d-flex align-items-center"><Link href="/adobe-customer-stories"><a className="theme-blue d-flex align-items-center"> Next project <motion.img initial={{ opacity: '0' }} animate={{ opacity: '1' }} transition={{ ease: "easeOut", duration: 1, delay: 1.8 }} src="/images/logo/right-arrow.png" className="ml-3" /></a></Link></motion.h1>
                                                     </div>
                                                     <motion.div className="d-flex  flex-column hoverText">
-                                                        <motion.p initial={{ x: '-15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-light-text text-light-orange  d-flex align-items-center no-wrap"><a href={`/contact?destination=/adobe-animate?slide=${activeSlide}`} target="_blank">Get in touch for a detailed walkthrough of my work.
+                                                        <motion.p initial={{ x: '-15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-light-text text-light-orange  d-flex align-items-center no-wrap"><a href={`#`} onClick={() => setisContactClicked(true)}>Get in touch for a detailed walkthrough of my work.
                                                             <motion.img initial={{ x: -20, y: -20, opacity: 0 }} animate={{ x: 10, y: -40, opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6, delay: 1.8 }} src="/images/logo/right-top.png" className="img-white inherit-display" />
                                                             <motion.img initial={{ x: -20, y: -20, opacity: 0 }} animate={{ x: 10, y: -40, opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6, delay: 1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" />
                                                         </a></motion.p>
-                                                        <motion.p initial={{ x: '10vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text text-light-orange text-right purple pr-4-5"><a href={`/contact?destination=/adobe-animate?slide=${activeSlide}`} target="_blank">Contact me</a></motion.p>
+                                                        <motion.p initial={{ x: '10vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text text-light-orange text-right purple pr-4-5"><a href={`#`} onClick={() => setisContactClicked(true)}>Contact me</a></motion.p>
                                                     </motion.div>
                                                 </div>
                                             </motion.div>

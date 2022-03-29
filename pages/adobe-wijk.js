@@ -142,7 +142,7 @@ function AdobeWiki({ links, authenticated }) {
                                     <Row className="position-relative">
                                         <Col xl={8} lg={8} className="offset-lg-4 offset-xl-4">
                                             {/* <motion.img key={1} initial={{opacity: 0, x:-40}} animate={{ opacity: 1, x:0  }} transition={{ ease: "easeOut", duration: 1}}  transition={{ ease: "easeOut", duration: 1}} src="/images/facebook-poster.webp" className="w100 position-relative z-9 w-max-60" /> */}
-                                            <motion.div key={1} initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ ease: "easeOut", duration: 1 }} transition={{ ease: "easeOut", duration: 1 }} className="w100 position-relative z-9 w-max-60">
+                                            <motion.div key={1} initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ ease: "easeOut", duration: 1 }} className="w100 position-relative z-9 w-max-60">
                                                 <ReactPlayer url={links?.adobe_wiki?.video_1} id="video_1" className="player" width="100%" height="100%" allowFullScreen playing={activeSlide === 0} />
                                             </motion.div>
                                             <motion.img key={2} initial={{ opacity: 0, y: 150 }} animate={{ opacity: 1, y: 0 }} transition={{ ease: "easeOut", duration: 1 }} src="/images/pattern-rec.svg" className="p-rec" />
@@ -542,11 +542,11 @@ function AdobeWiki({ links, authenticated }) {
                                                         <motion.h1 initial={{ x: '15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-heading-2 mt-2 d-flex align-items-center"><Link href="/adobe-animate"><a className="theme-blue d-flex align-items-center"> Next project <motion.img initial={{ opacity: '0' }} animate={{ opacity: '1' }} transition={{ ease: "easeOut", duration: 1, delay: 1.8 }} src="/images/logo/right-arrow.png" className="ml-3" /></a></Link></motion.h1>
                                                     </div>
                                                     <motion.div className="d-flex justify-content-end flex-column align-items-end hoverText">
-                                                        <motion.p initial={{ x: '-15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href={`/contact?destination=/adobe-wijk?slide=${activeSlide}`} target="_blank">Get in touch for a detailed walkthrough of my work.
+                                                        <motion.p initial={{ x: '-15vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-light-text text-dark  d-flex align-items-center no-wrap "><a href={`#`} onClick={() => setisContactClicked(true)}>Get in touch for a detailed walkthrough of my work.
                                                             <motion.img initial={{ x: -20, y: -20, opacity: 0 }} animate={{ x: 10, y: -40, opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6, delay: 1.8 }} src="/images/logo/right-top-dark.png" className="img-white inherit-display" />
                                                             <motion.img initial={{ x: -20, y: -20, opacity: 0 }} animate={{ x: 10, y: -40, opacity: 1 }} transition={{ ease: "easeOut", duration: 0.6, delay: 1.8 }} src="/images/right-top-purple.png" className="img-orange inherit-display" />
                                                         </a></motion.p>
-                                                        <motion.p initial={{ x: '10vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text text-dark purple"><a href={`/contact?destination=/adobe-wijk?slide=${activeSlide}`} target="_blank">Contact me</a></motion.p>
+                                                        <motion.p initial={{ x: '10vw' }} animate={{ x: '0' }} transition={{ ease: "easeOut", duration: 0.6, delay: 1 }} className="contact-mid-text text-dark purple"><a href={`#`} onClick={() => setisContactClicked(true)}>Contact me</a></motion.p>
                                                     </motion.div>
                                                 </div>
                                             </motion.div>
@@ -784,7 +784,7 @@ function AdobeWiki({ links, authenticated }) {
                                             <h1><Link href="/adobe-animate"><a className="theme-blue">Next project</a></Link></h1>
                                             <p className="mt-3 mb-0  f-medium"><Link href="/adobe-captivate"><a className="text-dark">Previous project</a></Link></p>
                                             <p className="mt-80 mb-0 text-dark">Get in touch for a detailed walkthrough of my work.</p>
-                                            <h2 className="text-dark mb-3 d-flex"><a href={`/contact?destination=/adobe-wijk?slide=${activeSlide}`} target="_blank">Contact me <img src="/images/logo/right-top-dark.png" className="mob-contact-arrow" /></a></h2>
+                                            <h2 className="text-dark mb-3 d-flex"><a href={`#`} onClick={() => setisContactClicked(true)}>Contact me <img src="/images/logo/right-top-dark.png" className="mob-contact-arrow" /></a></h2>
                                         </div>
                                     </Col>
                                 </Row>

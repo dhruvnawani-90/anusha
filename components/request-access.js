@@ -58,9 +58,9 @@ function RequestMagicCode(props) {
         setIsSubmitting(false);
     }
     return (
-        <main>
+        <main className={`contact-modal ${show ? 'show-contact' : ''}`}>
             <ToastContainer />
-            <div className={`main-wrapper auth contact-modal ${show ? 'show-contact' : ''}`}>
+            <div className={`main-wrapper auth`}>
                 <Container>
                     <Row>
                         <Col lg={12}>
@@ -76,7 +76,7 @@ function RequestMagicCode(props) {
                                 </div>
                                 :
                                 <div className="auth-wrapper">
-                                    <Link href="/auth?destination=%2Fadobe-captivate"><a className="back-button">{'<<<<<<'}<span> Back</span></a></Link>
+                                    <a onClick={() => setshowRequestAccess(false)} className="back-button">{'<<<<<<'}<span> Back</span></a>
                                     <h2 className="mb-4">I'd love to <span>hear</span> from you!</h2>
                                     <Form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
                                         <Form.Group className="mb-4" controlId="emailAddress">

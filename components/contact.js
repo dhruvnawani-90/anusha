@@ -73,7 +73,6 @@ export default function Contact(props) {
                 type: responseJSON.success,
                 toastId: responseJSON.message,
             });
-            setisContactClicked(false)
         }
         setIsSubmitting(false);
     }
@@ -86,6 +85,7 @@ export default function Contact(props) {
     }
     return (
         <main className={`theme-blue-bg auth-main-wrapper contact-modal ${show ? 'show-contact' : ''}`}>
+            <ToastContainer />
             {/* className={`main-wrapper auth ${setClose ? '' : 'remove'}`} */}
             <motion.div className={`main-wrapper auth ${close? 'remove' : ''}`} initial={{opacity: 1, y:'30vh'}} animate={{ opacity: 1, y:0 }} transition={{ ease: "easeOut", duration: 0.8 }}>
                 <Container>     
@@ -96,7 +96,7 @@ export default function Contact(props) {
                                     <h2 className="mb-2">We have received your <span>mail.</span></h2>
                                     <p className="text-muted">Sit tight! You will receive an email when your request has been approved.</p>
                                     <Form.Group className="mt-80" controlId="back">
-                                        <Button variant="theme" type="button" onClick={() => router.push('/')}>
+                                        <Button variant="theme" type="button" onClick={() => setisContactClicked(false)}>
                                             Ok
                                         </Button>
                                     </Form.Group>
@@ -137,7 +137,6 @@ export default function Contact(props) {
                     </Row>
                 </Container>
             </motion.div>
-            <ToastContainer />
         </main>
     );
 }
